@@ -1,6 +1,10 @@
-# (Dataset Exploration Title)
-## by (your name here)
+# Ford GoBike System Data Exploration
+## by Luca Zhou
 
+Data visualization is an essential skill that is used in many parts of the data analysis process. This project has two parts that demonstrate the importance and value of data visualization techniques.
+
+1. We will use **Matplotlib** and  **Seaborn** to systematically explore a selected dataset, starting from plots of single variables and building up to stories of multiple variables.
+2. We will produce a short presentation that illustrates interesting properties, trends, and relationships discovered in the first part. The primary method of conveying our findings will be through transforming our exploratory visualizations from the first part into polished, explanatory visualizations.
 
 ## Dataset
 
