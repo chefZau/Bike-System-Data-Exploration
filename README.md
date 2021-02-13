@@ -23,12 +23,10 @@ We will use Python 3, and the IDE we will be using is Jupyter Notebooks. Uses th
 
 ## Dataset
 
-The dataset we will be using is the [Ford GoBike System Data](https://www.fordgobike.com/system-data). Since the website is currently unavaliable, here is the link of the csv file: [201902-fordgobike-tripdata.csv](https://video.udacity-data.com/topher/2020/October/5f91cf38_201902-fordgobike-tripdata/201902-fordgobike-tripdata.csv).
+The dataset we will be using is the [Ford GoBike System Data](https://www.fordgobike.com/system-data). It includes information about individual rides made in a bike-sharing system covering the greater San Francisco Bay area. Since the website is currently unavailable, here is the link to the CSV file: [201902-fordgobike-tripdata.csv](https://video.udacity-data.com/topher/2020/October/5f91cf38_201902-fordgobike-tripdata/201902-fordgobike-tripdata.csv).
 
-This dataset includes information about individual rides made in a bike-sharing system covering the greater San Francisco Bay area.
-
-* Note that this dataset will require some data wrangling in order to make it tidy for analysis. There are multiple cities covered by the linked system, and multiple data files will need to be joined together if a full year’s coverage is desired
-* If you’re feeling adventurous, try adding in analysis from other cities, following links from [www.bikeshare.com](https://www.bikeshare.com/data/) or [this github link](https://github.com/BetaNYC/Bike-Share-Data-Best-Practices/wiki/Bike-Share-Data-Systems).
+* Note that this dataset will require some data wrangling to make it tidy for analysis. The linked system covers multiple cities, and numerous data files will need to be joined together if a full year’s coverage is desired.
+* If you’re feeling adventurous, try adding analysis from other cities, following links from [www.bikeshare.com](https://www.bikeshare.com/data/) or [this github link](https://github.com/BetaNYC/Bike-Share-Data-Best-Practices/wiki/Bike-Share-Data-Systems).
 
 The Features included in the Data are as follows :
 
