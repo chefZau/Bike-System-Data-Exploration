@@ -82,4 +82,4 @@ After exploring the above fields separately, we found out:
 
 ## Key Insights for Presentation
 
-The above findings suggest that most users choose to use the shared bicycles when the trips are are quick and not too far away. Most bike usages were coming from Emeryville, San Francisco, San Jose, Berkeley, and Oakland. It would be great if we increase new stations every 1.5 kilometers in these cities. Furthermore, the number of bikes in each station should depend on the density. The higher the usage density, the more bikes should be in the station.
+The above findings suggest that most users choose to use the shared bicycles when the trips are quick and not too far away. Most bike usages were coming from Emeryville, San Francisco, San Jose, Berkeley, and Oakland. It would be great if we increase new stations every 1.5 kilometers in these cities. Since the number of usages depends on the time of the day and week, we need to give each station different bikes based on the distribution of uses.
