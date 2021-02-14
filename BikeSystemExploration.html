@@ -14259,7 +14259,12 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Ford-GoBike-System-Data-Exploration">Ford GoBike System Data Exploration<a class="anchor-link" href="#Ford-GoBike-System-Data-Exploration">&#182;</a></h1><h2 id="by-Luca(MingCong)-Zhou">by Luca(MingCong) Zhou<a class="anchor-link" href="#by-Luca(MingCong)-Zhou">&#182;</a></h2><h2 id="Preliminary-Wrangling">Preliminary Wrangling<a class="anchor-link" href="#Preliminary-Wrangling">&#182;</a></h2><p>This data set includes information about individual rides made in a bike-sharing system covering the greater San Francisco Bay area.</p>
+<h1 id="Ford-GoBike-System-Data-Exploration">Ford GoBike System Data Exploration<a class="anchor-link" href="#Ford-GoBike-System-Data-Exploration">&#182;</a></h1><h2 id="by-Luca(MingCong)-Zhou">by Luca(MingCong) Zhou<a class="anchor-link" href="#by-Luca(MingCong)-Zhou">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Dataset-Overview">Dataset Overview<a class="anchor-link" href="#Dataset-Overview">&#182;</a></h2><p>This data set includes information about individual rides made in a bike-sharing system covering the greater San Francisco Bay area.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14615,13 +14620,20 @@ memory usage: 22.7+ MB
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="What-is-the-structure-of-your-dataset?">What is the structure of your dataset?<a class="anchor-link" href="#What-is-the-structure-of-your-dataset?">&#182;</a></h3><p>There are 183412 rides in the dataset with 16 features (<code>duration_sec</code>, <code>start_time</code>, <code>end_time</code>, <code>start_station_id</code>, <code>start_station_name</code>, <code>start_station_latitude</code>, <code>start_station_longitude</code>, <code>end_station_id</code>, <code>end_station_name</code>, <code>end_station_latitude</code>, <code>end_station_longitude</code>, <code>bike_id</code>, <code>user_type</code>, <code>member_birth_year</code>, <code>member_gender</code>, and <code>bike_share_for_all_trip</code>).</p>
 <p>Most variables are numeric in nature, but the variables <code>start_station_name</code>, <code>end_station_name</code>, <code>user_type</code>, <code>member_gender</code> and <code>bike_share_for_all_trip</code> are nominal factor variables.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="What-is/are-the-main-feature(s)-of-interest-in-your-dataset?">What is/are the main feature(s) of interest in your dataset?<a class="anchor-link" href="#What-is/are-the-main-feature(s)-of-interest-in-your-dataset?">&#182;</a></h3><p>I am most interested in figuring out what factors can increase the usage of our shared bicycle.</p>
 <h3 id="What-features-in-the-dataset-do-you-think-will-help-support-your-investigation-into-your-feature(s)-of-interest?">What features in the dataset do you think will help support your investigation into your feature(s) of interest?<a class="anchor-link" href="#What-features-in-the-dataset-do-you-think-will-help-support-your-investigation-into-your-feature(s)-of-interest?">&#182;</a></h3><p>I expect that the amount of bike usage depends on the following factors:</p>
 <ol>
-<li>the time of the day and the day of the week.</li>
-<li>the location of the bike station.</li>
-<li>the age of the user.</li>
-<li>the gender of the user.</li>
+<li>The duration of using shared bikes per person.</li>
+<li>The driving distance on using shared bikes per person.</li>
+<li>The usage of shared bikes per hour in a day.</li>
+<li>The daily usage of shared bikes in a week.</li>
+<li>Popular spots to use shared bikes.</li>
+<li>Under different locations, genders, and age groups, are the conclusions obtained from the above consistent.</li>
 </ol>
 
 </div>
@@ -14853,6 +14865,11 @@ memory usage: 22.7+ MB
 <li>Another unique point occurs when the distance is zero. About 3.5K rides ended at the same position; The starting point is the same as the ending point. Since we cannot track the distance when the two points are the same, the above graph has set the starting ticks as 0.1 using the <code>xlim</code> method.</li>
 </ol>
 <p>We have seen how the distribution of the distance is plotted. A quick insight from the graph is <strong>most people would consider using our bikes when the location is not too far away</strong>. However, some rows' <strong>starting and ending location data are the same</strong> (mentioned on point 2, above). We should also look at the average duration people spend on our bikes.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="How-long-does-the-average-trip-take?">How long does the average trip take?<a class="anchor-link" href="#How-long-does-the-average-trip-take?">&#182;</a></h3><p>As well as inspecting the distance people travel, the duration of bike usage is also a valuable indicator. Observing the histogram above shows some outliers; for instance, some rows' starting and ending location data are the same. However, are they regret it immediately after they rent a bike? The following is a histogram that demonstrates the distribution of the duration.</p>
 
 </div>
@@ -15078,6 +15095,11 @@ memory usage: 22.7+ MB
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The answer is no. As we can see on the above graphs, the distribution is very similar for all weekdays - a <strong>bimodal distribution</strong> (like what we observed previously). The distribution of weekends, on the other hand, is symmetric. With this in mind, the statement <strong>"our bikes are the main transportation for commuters"</strong> is likely to be true.</p>
 <p>To summarise, <strong>our bikes are trendy for a short and quick trip, and people tend to use them for rush hours</strong>.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="What-locations-do-people-use-our-bikes?">What locations do people use our bikes?<a class="anchor-link" href="#What-locations-do-people-use-our-bikes?">&#182;</a></h3><p>One of the main factors that determine customers to use our bicycles is the <strong>specific location of the bicycle</strong>. However, where should we place all our bikes? To solve this problem, we need to know where are all the bike usages coming from.</p>
 
 </div>
@@ -15452,6 +15474,11 @@ In comparison to the other two cities, bike usages are more spread out for San F
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>As shown in the left histogram, the mean is at the median's right; the age distribution is right-skewed. Moreover, the average age of a customer is 36.20 years old. From the donut chart in the middle, we can see that most of our customers are male. However, the violin plot at the right tells us females are the youngest group, followed by males and other gender groups.</p>
 <p>We already have a brief overview of the two features, <code>age</code> and <code>member_gender</code>. Let us dine in to make our multivariate exploration.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Is-the-hourly-usage-distribution-of-using-the-bicycles-the-same-for-each-gender-in-a-day?">Is the hourly usage distribution of using the bicycles the same for each gender in a day?<a class="anchor-link" href="#Is-the-hourly-usage-distribution-of-using-the-bicycles-the-same-for-each-gender-in-a-day?">&#182;</a></h3>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15501,7 +15528,11 @@ In comparison to the other two cities, bike usages are more spread out for San F
 <blockquote><p>On weekdays, most bike usages occur during the daytime, and it peaked at 7 am to 9 am and 4 pm to 6 pm. While on weekends, the peak of the usages tends to shift to early afternoon.</p>
 </blockquote>
 <p>However, when observing the usages of female users, the distribution on weekends was <strong>multimodal</strong> (we thought it was unimodal).</p>
-<p>One last observation for the data frame:</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Do-gender-affect-bike-usages?">Do gender affect bike usages?<a class="anchor-link" href="#Do-gender-affect-bike-usages?">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -15566,20 +15597,6 @@ In comparison to the other two cities, bike usages are more spread out for San F
 </ol>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 </body>
 
