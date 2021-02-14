@@ -1,4 +1,5 @@
 # Ford GoBike System Data Exploration
+
 ## by Luca Zhou
 
 This project has two parts that demonstrate the importance and value of data visualization techniques.
@@ -61,8 +62,23 @@ Derieved Features:
 
 ## Summary of Findings
 
-> Summarize all of your findings from your exploration here, whether we plan on bringing them into your explanatory presentation or not.
+This research's primary purpose is to find the factors that can increase the usage of shared bicycles. The study will launch around in the following aspects:
 
+1. The duration of using shared bikes per person.
+2. The driving distance on using shared bikes per person.
+3. The usage of shared bikes per hour in a day.
+4. The daily usage of shared bikes in a week.
+5. Popular spots to use shared bikes.
+6. Under different locations, genders, and age groups, are the conclusions obtained from the above consistent.
+
+After exploring the above fields separately, we found out:
+
+1. Most people would consider using the bikes when the trip is less than 1.43 kilometers.
+2. On average, a user did a ride in no more than 11.73 minutes.
+3. On weekdays, most bike usages occur during the daytime, and it peaked at 7 am to 9 am and 4 pm to 6 pm. While on weekends, the peak of the usages tends to shift to early afternoon.
+4. Most bike usages were coming from the modernized area; Namely, San Fransico, Berkeley, and San Jose — the closer to the waterfront, the higher the user density.
+5. The hourly usage distribution of using the bicycles almost the same for each gender. However, when observing female users' usages, the weekends' distribution was multimodal (instead of unimodal).
+6. When group by city and gender, women have the highest median in duration, followed by other gender groups and male. Moreover, the locality's highest median is Emeryville, San Francisco, San Jose, Berkeley, and Oakland.
 
 ## Key Insights for Presentation
 
